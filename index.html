@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="generator-wrapper">
+            <h3 class="generator-title">Password Generator</h3>
+            <div class="generator-header">
+                <div class="password-display">P4$5W0rD!</div>
+                <i class="copy-button fa-regular fa-copy"></i>
+            </div>
+            <div class="generator-body">
+                <div class="character-length-row">
+                    <p>Character Length</p>
+                    <span class="character-length">0</span>
+                </div>
+                <div class="range-slider-row">
+                    <input type="range" max="20" value="0" class="character-range">
+                </div>
+                <div class="include-checkboxes">
+                    <div class="check-group">
+                        <input type="checkbox" id="include-uppercase-letters">
+                        <label for="include-uppercase-letters">Include Uppercase Letters</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="include-lowercase-letters">
+                        <label for="include-lowercase-letters">Include Lowercase Letters</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="include-numbers">
+                        <label for="include-numbers">Include Numbers</label>
+                    </div>
+                    <div class="check-group">
+                        <input type="checkbox" id="include-symbols">
+                        <label for="include-symbols">Include Symbols</label>
+                    </div>
+                </div>
+                <div class="strength-row">
+                    <p>STRENGTH</p>
+                    <div class="strength">
+                        <span class="strength-level"></span>
+                        <span class="strength-bars">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </span>
+                    </div>
+                </div>
+                <button class="generate-button">GENERATE<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
