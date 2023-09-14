@@ -73,10 +73,8 @@ function setStrength() {
         for (let i = 0; i < strengthBars.length; i++) {
             const bar = strengthBars[i];
             bar.className = `bar active-bar-${color}`;
-            if (i === barCount) {
+            if (i >= barCount) 
                 bar.className = 'bar';
-                break;
-            }
         }
         strengthLevelElement.textContent = strengthLevel.toUpperCase();
     }
