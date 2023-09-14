@@ -41,8 +41,6 @@ function generatePassword() {
         setStrength();
 
         passwordDisplay.textContent = password;   
-    } else {
-        alert('Please select a valid filter!');
     }
 }
 
@@ -57,8 +55,7 @@ function includeOtherCharacters(checkbox, characters) {
 function setStrength() {
     let strength = 0;
     let strengthLevel = '';
-    let checkedBoxCount = 0;
-    includeCheckBoxes.forEach(checkbox => checkbox.checked === true && (checkedBoxCount++));
+    const checkedBoxCount = Array.from(includeCheckBoxes).filter(checkbox => checkbox.checked).length;
 
     strength += characterRange.value * 3;
 
@@ -114,8 +111,10 @@ function rangeCharacterLength() {
 
 function validate() {
     let value = false
-    if (Number(characterRange.value) > 0 && (includeCheckBoxes[0].checked === true || includeCheckBoxes[1].checked === true || includeCheckBoxes[2].checked === true || includeCheckBoxes[3].checked === true)) {
+    if (Number(characterRange.value) > 0 && Array.from(includeCheckBoxes).some(checkbox => checkbox.checked)) {
         value = true; 
+    } else {
+        alert('Please select a valid filter!');
     }
     return value;
 }
